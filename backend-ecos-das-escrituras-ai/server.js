@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
 const winston = require('winston');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
