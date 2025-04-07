@@ -1,0 +1,44 @@
+<div class="all">
+  <main>
+    <section id="perguntas">
+      <h2>Faça uma Pergunta</h2>
+      <textarea [(ngModel)]="pergunta" placeholder="Digite ou fale sua pergunta aqui..."></textarea>
+      <br />
+      <button (click)="falarPergunta()">🎤 Falar Pergunta</button>
+      <button (click)="enviarPergunta()">Enviar</button>
+      
+      <div class="resposta" *ngIf="resposta">
+        <h3>Resposta:</h3>
+        <div class="resposta-texto">
+          <p>{{ resposta }}</p>
+        </div>
+        <div class="controls">
+          <button (click)="falarResposta()">🔊 Ouvir Resposta</button>
+          <button (click)="pausarLeitura()">⏸️ Pausar</button>
+          <button (click)="retomarLeitura()">▶️ Retomar</button>
+          <button (click)="pararLeitura()">⏹️ Parar</button>
+        </div>
+      </div>
+
+      <div class="log">
+        <h3>Histórico de Interações:</h3>
+        <ul>
+          <li *ngFor="let interacao of historico" (click)="mostrarDetalhes(interacao)">
+            {{ interacao.titulo }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="detalhes" *ngIf="detalhes">
+        <h3>Detalhes da Interação:</h3>
+        <p>{{ detalhes }}</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 - Ecos das Escrituras AI. Todos os direitos reservados.</p>
+    <p>As respostas são baseadas em fontes respeitáveis da tradição católica, incluindo a Bíblia Católica, o Catecismo
+      da Igreja Católica, Catena Aurea, São Tomás de Aquino e documentos oficiais do
+      Vaticano.</p>
+  </footer>
+</div>

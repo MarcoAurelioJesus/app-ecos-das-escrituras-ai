@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+    .all {
+        background-image: url('/assets/images/fundo.png'); 
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+
+.header {
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #444;
+}
+
+
+section {
+    top: 30%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: rgb(255 255 255 / 88%);
+}
+textarea {
+    margin: 2% 0;
+    width: 100%;
+    background: #3f51b545;
+}
+
+section#sobre {
+    text-align: center;
+}
+
+.icones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.icone {
+    text-align: center;
+    padding: 1rem;
+    flex-basis: 10%;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    border: 1px solid #4A88DD;
+    border-radius: 5px;
+}
+
+button {
+    margin: 10px;
+    padding: 0.5rem 1rem;
+    background-color: #4A88DD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3576bb;
+}
+
+.resposta-texto {
+    max-height: 200px; /* Altura máxima da área de resposta */
+    overflow-y: auto;  /* Adiciona rolagem vertical se o conteúdo ultrapassar a altura máxima */
+    border: 1px solid #ccc; /* Adiciona uma borda para delimitar a área */
+    padding: 10px; /* Adiciona um pouco de espaço interno */
+    background-color: #f9f9f9; /* Cor de fundo para a área de resposta */
+    margin-top: 10px; /* Margem acima da área de resposta */
+}
+
+.log {
+    max-height: 150px; /* Altura máxima para o histórico de interações */
+    overflow-y: auto;  /* Adiciona rolagem vertical se o conteúdo ultrapassar a altura máxima */
+    border: 1px solid #ccc; /* Borda para delimitar a área */
+    padding: 10px; /* Espaço interno */
+    background-color: #f9f9f9; /* Cor de fundo */
+    margin-top: 10px; /* Margem acima */
+}
+
+.detalhes {
+    border-top: 1px solid #ccc; /* Borda superior para separar os detalhes */
+    margin-top: 10px; /* Margem acima */
+    padding: 10px; /* Espaço interno */
+    background-color: #f9f9f9; /* Cor de fundo */
+}
+
+footer {
+    text-align: center;
+    padding: 0 4%;
+    color: #ffffff8f;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
