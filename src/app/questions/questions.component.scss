@@ -2,16 +2,17 @@
     margin: 0;
     padding: 0;
 }
-    .all {
-        background-image: url('/assets/images/fundo.png'); 
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-    }
 
-.header {
-
+.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('/assets/images/fundo.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
 }
+
 
 body {
     font-family: 'Arial', sans-serif;
@@ -21,20 +22,36 @@ body {
 
 
 section {
-    top: 30%;
+    color: #f0b83d;
+    font-size: large;
     position: absolute;
     left: 0;
     right: 0;
-    padding: 2rem;
+    padding: 2%;
     margin: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: rgb(255 255 255 / 88%);
+    text-align: center;
 }
+
 textarea {
-    margin: 2% 0;
     width: 100%;
-    background: #3f51b545;
+    max-width: 90%;
+    margin: 2% 4% 0 0;
+    background: rgb(110 170 202 / 15%);
+    color: aliceblue;
+    font-size: large;
+    resize: none; /* Desabilita o redimensionamento */
+    outline: none; /* Remove o contorno ao focar */
+}
+
+textarea::-webkit-input-placeholder { /* Chrome e Safari */
+    color: #0f0569;
+    font-style: italic;
+}
+
+.historico {
+    font-size: 16px;
 }
 
 section#sobre {
@@ -62,14 +79,21 @@ input[type="text"] {
     border-radius: 5px;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 button {
-    margin: 10px;
-    padding: 0.5rem 1rem;
-    background-color: #4A88DD;
-    color: white;
+    margin: 2px;
+    padding: 6px 12px;
+    background-color: #cf8e13;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 10px;
+    color: #005db7;
+    font-size: 14px;
+    font-weight: bolder;
 }
 
 button:hover {
@@ -77,29 +101,54 @@ button:hover {
 }
 
 .resposta-texto {
-    max-height: 200px; /* Altura máxima da área de resposta */
-    overflow-y: auto;  /* Adiciona rolagem vertical se o conteúdo ultrapassar a altura máxima */
-    border: 1px solid #ccc; /* Adiciona uma borda para delimitar a área */
-    padding: 10px; /* Adiciona um pouco de espaço interno */
-    background-color: #f9f9f9; /* Cor de fundo para a área de resposta */
-    margin-top: 10px; /* Margem acima da área de resposta */
+    max-height: 380px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(38 37 37 / 62%);
+    color: #fffefd;
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: monospace;
+    text-align: left;
+    text-align: left;
+    text-shadow: 6px 4px 5px #f5ac21eb;
+    letter-spacing: 0.5px;
 }
 
 .log {
-    max-height: 150px; /* Altura máxima para o histórico de interações */
-    overflow-y: auto;  /* Adiciona rolagem vertical se o conteúdo ultrapassar a altura máxima */
-    border: 1px solid #ccc; /* Borda para delimitar a área */
-    padding: 10px; /* Espaço interno */
-    background-color: #f9f9f9; /* Cor de fundo */
-    margin-top: 10px; /* Margem acima */
+    margin-bottom: 10%;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 4px;
+    background: rgb(210 222 229 / 35%);
+    color: #b87d22;
+    max-width: 90%;
+    text-align: center;
+    margin-left: 4%;
 }
 
 .detalhes {
-    border-top: 1px solid #ccc; /* Borda superior para separar os detalhes */
-    margin-top: 10px; /* Margem acima */
-    padding: 10px; /* Espaço interno */
-    background-color: #f9f9f9; /* Cor de fundo */
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
 }
+
+#imagens {
+    img {
+      max-width: 100%; // Garante que a imagem não exceda a largura do contêiner
+      height: auto; // Mantém a proporção da imagem
+      display: block;
+      margin: 0 auto; // Centraliza a imagem
+    }
+
+    button {
+      margin-top: 1rem;
+    }
+  }
 
 footer {
     text-align: center;
