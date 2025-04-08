@@ -1,16 +1,20 @@
 <div class="all">
   <main>
-    <section id="perguntas">
+
+    <section id="perguntas" *ngIf="!exibirImagens">
       <h2>Faça uma Pergunta</h2>
+      <div class="buttons">
+        <button (click)="falarPergunta()">🎤Perguntar</button>
+        <button (click)="enviarPergunta()">Enviar</button>
+        <button (click)="alternarSecao()">
+          {{ exibirImagens ? 'Voltar para Perguntas' : 'Gerar Imagem' }}
+        </button>
+      </div>
       <textarea [(ngModel)]="pergunta" placeholder="Digite ou fale sua pergunta aqui..."></textarea>
-      <br />
-      <button (click)="falarPergunta()">🎤 Falar Pergunta</button>
-      <button (click)="enviarPergunta()">Enviar</button>
-      
       <div class="resposta" *ngIf="resposta">
         <h3>Resposta:</h3>
         <div class="resposta-texto">
-          <p>{{ resposta }}</p>
+          <p (input)="formatText()">{{ resposta }}</p>
         </div>
         <div class="controls">
           <button (click)="falarResposta()">🔊 Ouvir Resposta</button>
@@ -20,20 +24,34 @@
         </div>
       </div>
 
-      <div class="log">
-        <h3>Histórico de Interações:</h3>
-        <ul>
-          <li *ngFor="let interacao of historico" (click)="mostrarDetalhes(interacao)">
-            {{ interacao.titulo }}
-          </li>
-        </ul>
-      </div>
-
       <div class="detalhes" *ngIf="detalhes">
         <h3>Detalhes da Interação:</h3>
         <p>{{ detalhes }}</p>
       </div>
     </section>
+
+    <section id="imagens" *ngIf="exibirImagens">
+      <h2>Gerar Imagem</h2>
+      <textarea [(ngModel)]="descricaoImagem" placeholder="Digite a descrição da imagem aqui..."></textarea>
+      <div class="buttons">
+          <button (click)="gerarImagem()">Criar Imagem</button>
+          <button (click)="alternarSecao()">
+              {{ exibirImagens ? 'Voltar' : 'Gerar Imagem' }}
+          </button>
+      </div>
+      <div *ngIf="imagemGerada">
+        <img [src]="imagemGerada" alt="Imagem gerada" />
+        <button (click)="baixarImagem()">Baixar Imagem</button>
+    </div>
+  </section>
   </main>
 
+  <div class="log">
+    <h1 class="historico">Histórico de Interações:</h1>
+    <ul>
+      <li *ngFor="let interacao of historico" (click)="mostrarDetalhes(interacao)">
+        {{ interacao.titulo }}
+      </li>
+    </ul>
+  </div>
 </div>
